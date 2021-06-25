@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity"
+    android:orientation="vertical">
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="location"
+    android:textSize="70sp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+<EditText
+    android:id="@+id/vid1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Governorate"/>
+
+    <EditText
+        android:id="@+id/vid2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Area"/>
+
+    <EditText
+        android:id="@+id/vid3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Street name"/>
+
+    <EditText
+        android:id="@+id/vid4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Building number"/>
+
+    <EditText
+        android:id="@+id/vid5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="number Role or flat"/>
+
+    <EditText
+        android:id="@+id/vid6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Special marque" />
+
+    <Button
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go"
+        android:textSize="30sp"
+        android:onClick="butomclick"/>
+
+
+
+
+
+
+</LinearLayout>

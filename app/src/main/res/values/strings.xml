@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">stores</string>
+    <string name="Bakery">bakery</string>
+    <string name="Dassert">dassert</string>
+    <string name="Meat">meat</string>
+    <string name="Ckicken">ckicken</string>
+    <string name="Fish">fish</string>
+</resources>
