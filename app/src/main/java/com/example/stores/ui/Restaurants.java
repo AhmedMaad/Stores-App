@@ -17,6 +17,7 @@ import com.example.stores.data.Storesmodel;
 import java.util.ArrayList;
 
 public class Restaurants extends AppCompatActivity {
+
     private ArrayList<Storesmodel> storesmodels = new ArrayList<>();
 
     @Override
@@ -24,11 +25,16 @@ public class Restaurants extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurants);
 
-        storesmodels.add(new Storesmodel(R.drawable.bakery, R.string.Bakery));
-        storesmodels.add(new Storesmodel(R.drawable.dessert, R.string.Dassert));
-        storesmodels.add(new Storesmodel(R.drawable.meat, R.string.Meat));
-        storesmodels.add(new Storesmodel(R.drawable.ckicken, R.string.Ckicken));
-        storesmodels.add(new Storesmodel(R.drawable.fish, R.string.Fish));
+        storesmodels.add(new Storesmodel(R.drawable.bakery, R.string.Bakery, ""
+                , 0.0));
+        storesmodels.add(new Storesmodel(R.drawable.dessert, R.string.Dassert, ""
+                , 0.0));
+        storesmodels.add(new Storesmodel(R.drawable.milky, R.string.milky, ""
+                , 0.0));
+        storesmodels.add(new Storesmodel(R.drawable.legumes, R.string.legumes, ""
+                , 0.0));
+        storesmodels.add(new Storesmodel(R.drawable.alternative, R.string.alternative, ""
+                , 0.0));
 
         CustomerAdapter adapter = new CustomerAdapter(storesmodels, Restaurants.this);
 
@@ -39,9 +45,10 @@ public class Restaurants extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                /*Intent intent =new Intent(this,Products.class);
-                intent.putExtra("choclet", )*/
+                Intent intent = new Intent(Restaurants.this
+                        , MealDetailsActivity.class);
+                intent.putExtra("meal", storesmodels.get(position));
+                startActivity(intent);
             }
 
         });
@@ -55,13 +62,18 @@ public class Restaurants extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        Intent i = new Intent(this, ShoppingCart.class);
+
         switch (item.getItemId()) {
             case R.id.item_chef_hamdy:
-                //open cart with "hamdy" as a key
+                i.putExtra("cart", "chef_hamdy");
+                startActivity(i);
                 return true;
 
             case R.id.item_gygy:
-                //open cart with "gigi" as a key
+                i.putExtra("cart", "gigi");
+                startActivity(i);
                 return true;
         }
         return super.onOptionsItemSelected(item);
