@@ -1,9 +1,12 @@
 package com.example.stores.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -33,7 +36,6 @@ public class Restaurants extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -43,8 +45,28 @@ public class Restaurants extends AppCompatActivity {
             }
 
         });
-        }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.shopping_cart_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_chef_hamdy:
+                //open cart with "hamdy" as a key
+                return true;
+
+            case R.id.item_gygy:
+                //open cart with "gigi" as a key
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}
 
 
 

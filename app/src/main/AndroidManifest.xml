@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Stores">
-        <activity android:name=".ui.Products"></activity>
+        <activity android:name=".ui.MealDetailsActivity"></activity>
+        <activity android:name=".ui.Products" />
         <activity android:name=".ui.Restaurants" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
