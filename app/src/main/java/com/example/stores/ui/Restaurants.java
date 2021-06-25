@@ -62,17 +62,18 @@ public class Restaurants extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.item_chef_hamdy:
-                i.putExtra("cart", "chef_hamdy");
+                i.putExtra("restaurant", "Hamdy");
                 startActivity(i);
                 return true;
 
             case R.id.item_gygy:
-                i.putExtra("cart", "gigi");
+                i.putExtra("restaurant", "Gigi");
                 startActivity(i);
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
 
 

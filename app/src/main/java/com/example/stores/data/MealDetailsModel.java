@@ -2,14 +2,16 @@ package com.example.stores.data;
 
 public class MealDetailsModel {
 
+    private String email;
     private int picture;
     private String name;
     private String ingredients;
     private double price;
     private String restaurant;
 
-    public MealDetailsModel(int picture, String name, String ingredients
+    public MealDetailsModel(String email, int picture, String name, String ingredients
             , double price, String restaurant) {
+        this.email = email;
         this.picture = picture;
         this.name = name;
         this.ingredients = ingredients;
@@ -35,5 +37,9 @@ public class MealDetailsModel {
 
     public String getRestaurant() {
         return restaurant;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

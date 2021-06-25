@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">stores</string>
     <string name="Bakery">bakery</string>
-    <string name="Dassert">dassert</string>
+    <string name="Dassert">dessert</string>
     <string name="milky">Milky</string>
     <string name="legumes">Legumes</string>
     <string name="alternative">Alternative meals</string>
