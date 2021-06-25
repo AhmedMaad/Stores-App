@@ -25,16 +25,11 @@ public class Restaurants extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurants);
 
-        storesmodels.add(new Storesmodel(R.drawable.bakery, R.string.Bakery, ""
-                , 0.0));
-        storesmodels.add(new Storesmodel(R.drawable.dessert, R.string.Dassert, ""
-                , 0.0));
-        storesmodels.add(new Storesmodel(R.drawable.milky, R.string.milky, ""
-                , 0.0));
-        storesmodels.add(new Storesmodel(R.drawable.legumes, R.string.legumes, ""
-                , 0.0));
-        storesmodels.add(new Storesmodel(R.drawable.alternative, R.string.alternative, ""
-                , 0.0));
+        storesmodels.add(new Storesmodel(R.drawable.bakery, R.string.Bakery, "bakery"));
+        storesmodels.add(new Storesmodel(R.drawable.dessert, R.string.Dassert, "dessert"));
+        storesmodels.add(new Storesmodel(R.drawable.milky, R.string.milky, "milky"));
+        storesmodels.add(new Storesmodel(R.drawable.legumes, R.string.legumes, "legumes"));
+        storesmodels.add(new Storesmodel(R.drawable.alternative, R.string.alternative, "alternative"));
 
         CustomerAdapter adapter = new CustomerAdapter(storesmodels, Restaurants.this);
 
@@ -47,7 +42,7 @@ public class Restaurants extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(Restaurants.this
                         , MealDetailsActivity.class);
-                intent.putExtra("meal", storesmodels.get(position));
+                intent.putExtra("meal", storesmodels.get(position).getKey());
                 startActivity(intent);
             }
 
