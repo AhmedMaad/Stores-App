@@ -1,6 +1,7 @@
 package com.example.stores.ui;
 
 import android.app.Activity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +20,13 @@ public class MealDetailsAdapter extends BaseAdapter {
 
     private ArrayList<MealDetailsModel> meals;
     private Activity activity;
+    private boolean isShoppingCart;
 
-    public MealDetailsAdapter(ArrayList<MealDetailsModel> meals, Activity activity) {
+    public MealDetailsAdapter(ArrayList<MealDetailsModel> meals, Activity activity
+            , boolean isShoppingCart) {
         this.meals = meals;
         this.activity = activity;
+        this.isShoppingCart = isShoppingCart;
     }
 
     @Override
@@ -50,9 +54,17 @@ public class MealDetailsAdapter extends BaseAdapter {
         TextView ingredients = convertView.findViewById(R.id.tv_ingredients);
         TextView price = convertView.findViewById(R.id.tv_price);
 
-        picture.setImageResource(meals.get(i).getPicture());
+        if (isShoppingCart) {
+            picture.setVisibility(View.GONE);
+            ingredients.setVisibility(View.GONE);
+            price.setGravity(Gravity.START);
+            name.setGravity(Gravity.START);
+        } else {
+            picture.setImageResource(meals.get(i).getPicture());
+            ingredients.setText(meals.get(i).getIngredients());
+        }
+
         name.setText(meals.get(i).getName());
-        ingredients.setText(meals.get(i).getIngredients());
         price.setText("Price: $" + meals.get(i).getPrice());
 
         return convertView;

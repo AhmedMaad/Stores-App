@@ -106,12 +106,11 @@ public class MealDetailsActivity extends AppCompatActivity {
         }
 
         ListView list = findViewById(R.id.so1);
-        MealDetailsAdapter adapter = new MealDetailsAdapter(meals, this);
+        MealDetailsAdapter adapter = new MealDetailsAdapter(meals, this, false);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Add to shopppig cart and navigate to shooping carrt and finish this activty
                 FirebaseFirestore.getInstance().collection("meal")
                         .add(meals.get(position))
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

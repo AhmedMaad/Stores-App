@@ -19,6 +19,8 @@ public class MealDetailsModel {
         this.restaurant = restaurant;
     }
 
+    public MealDetailsModel(){}
+
     public int getPicture() {
         return picture;
     }
